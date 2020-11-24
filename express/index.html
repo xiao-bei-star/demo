@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <title>test</title>
+    <style>
+        #result {
+            width: 200px;
+            height: 100px;
+            border: solid 2px #3c7988;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="page-header">AJAX请求</h2>
+        <div id="result"></div>
+        <br>
+        <button class="btn">点击获取后台信息</button>
+    </div>
+
+    <script>
+        $('button').click(function() {
+            $.ajax({
+                //url访问的地址
+                url: 'http://127.0.0.1:8000/json-server',
+                //参数
+                data: {
+                    a: 100,
+                    b: 200
+                },
+                //请求类型
+                type: 'GET',
+                //响应体结果
+                dataType: 'json',
+                //成功DE回调
+                success: function(data) {
+                    console.log(data);
+                },
+                //超时时间
+                timeout: 2000,
+                //失败的回调
+                error: function() {
+                    console.log("出错啦");
+                }
+            })
+        });
+        $("button").click(function() {
+
+            const result = document.getElementById("result");
+            //初始化
+            const xhr = new XMLHttpRequest();
+            xhr.responseType = 'json';
+            //请求
+            xhr.open('get', 'http://127.0.0.1:8000/json-server');
+            xhr.send();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 304) {
+                        result.innerHTML = xhr.response.message;
+
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
