@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+		<title>ToDoList</title>
+		<meta name="description" content="ToDoList无须注册即可使用，数据存储在用户浏览器的html5本地数据库里，是最简单最安全的待办事项列表应用！" />
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<header>
+			<section>
+				<form action="javascript:postaction()" id="form">
+					<label for="title">Todolist</label>
+					<input type="text" id="title" name="title" placeholder="添加一个ToDo" required="required" autocomplete="off" />
+				</form>
+			</section>
+		</header>
+		<section>
+			<h2 onclick="save()">进行中<span id="todocount"></span></h2>
+			<ol id="todolist" class="demo-box">
+			</ol>
+			<h2>已完成 <span id="donecount"></span></h2>
+			<ul id="donelist">
+			</ul>
+		</section>
+        <!-- <div id="clear">
+    	   <button id="clearbutton"><a href="javascript:clear();><h3>全部清除</h3></a></button>
+        </div> -->
+
+		<footer>
+			 &copy;  <a href="javascript:clear();">删除全部</a>
+		</footer>
+		<script type="text/javascript" src="action.js"></script>
+	</body>
+</html>
