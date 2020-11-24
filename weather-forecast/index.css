@@ -1,0 +1,63 @@
+.search_form {
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+img {
+    width: 250px;
+    height: 200px;
+}
+
+.form_group input {
+    border: 2px solid #7BA7AB;
+    border-radius: 10px;
+    background: #F9F0DA;
+    color: #9E9C9C;
+    outline: none;
+}
+
+.input_txt {
+    height: 30px;
+    width: 250px;
+}
+
+.form_group button {
+    height: 32px;
+    right: 0;
+    background: #7BA7AB;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.hotkey a {
+    margin: auto;
+    text-decoration: none;
+    color: #9E9C9C;
+    padding: 10px;
+}
+
+.weather_list {
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 60px;
+}
+
+.list {
+    float: left;
+    width: 20%;
+    list-style-type: none;
+}
+
+.iconfont {
+    font-size: 30px;
+    color: #f8a05d;
+}
+
+.info_temp {
+    font-size: 15px;
+    color: #f8a05d;
+}
+
+.info_data {
+    color: #b6a50c;
+}
